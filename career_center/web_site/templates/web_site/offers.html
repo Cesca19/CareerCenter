@@ -1,0 +1,11 @@
+{% if companies %}
+    <ul>
+    {% for elm in companies %}
+        <h2> {{ elm.Name }} </h2>
+        <p> {{ elm.Description }} </p>
+        <button onclick="location.href = './offer/{{ elm.Offer.name }}';" id="myButton" class="float-left submit-button" >View offer</button>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Sorry, No internship proposal available</p>
+{% endif %}
