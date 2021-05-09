@@ -1,11 +1,71 @@
-{% if companies %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="body">
+    <head>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+            div.gallery {
+              margin: 5px;
+              float: left;
+              width: 300px;
+              height: 300px
+            }
+
+            p.desc {
+              text-align: center;
+            }
+            h2.desc {
+              text-align: center;
+            }
+        </style>
+        <title>Offers</title>
+         <link rel="stylesheet" href="{% static  'css/styles.css'  %}">
+    </head>
+
+    <body>
     <ul>
-    {% for elm in companies %}
-        <h2> {{ elm.Name }} </h2>
-        <p> {{ elm.Description }} </p>
-        <button onclick="location.href = './offer/{{ elm.Offer.name }}';" id="myButton" class="float-left submit-button" >View offer</button>
-    {% endfor %}
+      <li><a class="active" href="../web_site">Home</a></li>
+      <li><a href="">Offer</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
-{% else %}
-    <p>Sorry, No internship proposal available</p>
-{% endif %}
+
+    {% if companies %}
+    {% for elm in companies %}
+    <div class="gallery">
+        <h2 class="desc"> {{ elm.Name }} </h2>
+        <p class="desc"> {{ elm.Description }} <br> <br>
+        <button onclick="location.href = './offer/{{ elm.Offer.name }}';" id="myButton" class="float-left submit-button" >View offer</button></p>
+    </div>
+        {% endfor %}
+    {% else %}
+        <p>Sorry, No internship proposal available</p>
+    {% endif %}
+    </body>
+
+</html>
+
