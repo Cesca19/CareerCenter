@@ -31,6 +31,25 @@
             h1.centrer {
                  text-align: center;
             }
+            #footer {
+                position: fixed;
+                padding: 10px 10px 0px 10px;
+                bottom: 0;
+                width: 100%;
+                /* Height of the footer*/
+                height: 40px;
+                background: grey;
+            }
+
+            @font-face {
+                font-family: 'Dancing';
+                src:url("{% static  'css/DancingScript-VariableFont_wght.ttf'  %}");
+            }
+
+            h1 {
+                font-family: "Dancing";
+                font-size: 60px;
+            }
         </style>
         <title>Home</title>
          <link rel="stylesheet" href="{% static  'css/styles.css'  %}">
@@ -48,6 +67,6 @@
     </body>
 
         <footer>
-            <p class="centrer">Copyright © My Website 2021</p>
+            <p class="centrer" id="footer">Copyright © My Website 2021</p>
         </footer>
 </html>

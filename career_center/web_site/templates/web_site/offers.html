@@ -31,8 +31,8 @@
             div.gallery {
               margin: 5px;
               float: left;
-              width: 300px;
-              height: 300px
+              width: 400px;
+              height: 400px
             }
 
             p.desc {
@@ -40,6 +40,46 @@
             }
             h2.desc {
               text-align: center;
+            }
+            #footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                /* Height of the footer*/
+                height: 40px;
+            }
+
+            @font-face {
+                font-family: 'Dancing';
+                src:url("{% static  'css/DancingScript-VariableFont_wght.ttf'  %}");
+            }
+
+            @font-face {
+                font-family: 'Pacifico';
+                src:url("{% static  'css/Pacifico-Regular.ttf'  %}");
+            }
+
+            h2 {
+                cursor: pointer;
+                position: relative;
+                left: 0;
+                background-color: #EEE;
+                margin: .5em;
+                padding: .3em 0;
+                height: 1.6em;
+                border-radius: 4px;
+                font-family: Pacifico;
+            }
+
+            h2:hover {
+                color: #2c3a41;
+                background-color: #e6e6e6;
+                left: .1em;
+            }
+
+            p {
+                font-family: Dancing;
+                font-size: 22px;
             }
         </style>
         <title>Offers</title>
@@ -66,6 +106,10 @@
         <p>Sorry, No internship proposal available</p>
     {% endif %}
     </body>
+
+    <footer>
+            <p class="centrer" id="footer">Copyright © My Website 2021</p>
+    </footer>
 
 </html>
 
